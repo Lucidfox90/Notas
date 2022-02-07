@@ -39,12 +39,12 @@ frame_identificacion.grid(column=0, row=0, padx=4, pady=2)
 ttk.Label(frame_identificacion, text="Apellido paterno").grid(column=0, row=0, padx=4, pady=2)
 paterno= tk.StringVar()
 a_paterno= ttk.Entry(frame_identificacion, width=20, textvariable=paterno)
-a_paterno.grid(column=1, row=0, padx=8, pady=4)
+a_paterno.grid(column=1, row=0, padx=4, pady=2)
 
 ttk.Label(frame_identificacion, text="Apellido materno").grid(column=2, row=0, padx=4, pady=2)
 paterno= tk.StringVar()
 a_paterno= ttk.Entry(frame_identificacion, width=20, textvariable=paterno)
-a_paterno.grid(column=3, row=0, padx=8, pady=4)
+a_paterno.grid(column=3, row=0, padx=4, pady=2)
 
 ttk.Label(frame_identificacion, text="Nombre").grid(column=4, row=0, padx=4, pady=2)
 paterno= tk.StringVar()
@@ -53,7 +53,7 @@ a_paterno.grid(column=5, row=0, padx=4, pady=2)
 
 ttk.Label(frame_identificacion, text="sexo").grid(column=0, row=1, padx=4, pady=2)
 sx = tk.StringVar()
-elec_sx= ttk.Combobox(frame_identificacion, width=12, textvariable=sx, state="readonly")
+elec_sx = ttk.Combobox(frame_identificacion, width=12, textvariable=sx, state="readonly")
 elec_sx['values'] = ("Femenino", "Masculino")
 elec_sx.grid(column=1,row=1, padx=4, pady=2)
 elec_sx.current(0)
@@ -61,18 +61,65 @@ elec_sx.current(0)
 ttk.Label(frame_identificacion, text="Fecha de nacimiento").grid(column=0, row=2, padx=4, pady=2)
 ttk.Label(frame_identificacion, text="Dia").grid(column=1, row=2, padx=4, pady=2)
 dia = tk.StringVar()
-elec_dia = ttk.Entry(frame_identificacion, width=20, textvariable=dia)
+elec_dia = ttk.Combobox(frame_identificacion, width=5, textvariable=dia, state="readonly")
+elec_dia['values'] = ('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31')
 elec_dia.grid(column=2,row=2, padx=4, pady=2)
 
 ttk.Label(frame_identificacion, text="Mes").grid(column=3, row=2, padx=4, pady=2)
 mes = tk.StringVar()
-elec_mes = ttk.Entry(frame_identificacion, width=20, textvariable=dia)
+elec_mes = ttk.Combobox(frame_identificacion, width=5, textvariable=mes, state="readonly")
+elec_mes['values'] = ('1','2','3','4','5','6','7','8','9','10','11','12')
 elec_mes.grid(column=4,row=2, padx=4, pady=2)
 
 ttk.Label(frame_identificacion, text="Ano").grid(column=5, row=2, padx=4, pady=2)
 ano = tk.StringVar()
-elec_ano = ttk.Entry(frame_identificacion, width=20, textvariable=dia)
+elec_ano = ttk.Entry(frame_identificacion, width=5, textvariable=ano)
 elec_ano.grid(column=6,row=2, padx=4, pady=2)
+
+#Frame signos vitales
+frame_vitales = ttk.LabelFrame(tab1, text="Signos Vitales")
+frame_vitales.grid(column=0, row=1, padx=4, pady=2)
+
+ttk.Label(frame_vitales, text="Frecuencia cardiaca").grid(column=0, row=0, padx=4, pady=2)
+fc= tk.StringVar()
+elec_fc= ttk.Entry(frame_vitales, width=10, textvariable=fc)
+elec_fc.grid(column=1, row=0, padx=4, pady=2)
+
+ttk.Label(frame_vitales, text="Frecuencia respiratoria").grid(column=2, row=0, padx=4, pady=2)
+fr= tk.StringVar()
+elec_fr= ttk.Entry(frame_vitales, width=10, textvariable=fr)
+elec_fr.grid(column=3, row=0, padx=4, pady=2)
+
+ttk.Label(frame_vitales, text="Tension arterial").grid(column=4, row=0, padx=4, pady=2)
+ta= tk.StringVar()
+elec_ta= ttk.Entry(frame_vitales, width=10, textvariable=ta)
+elec_ta.grid(column=5, row=0, padx=4, pady=2)
+
+ttk.Label(frame_vitales, text="Saturacion O2").grid(column=6, row=0, padx=4, pady=2)
+sat= tk.StringVar()
+elec_sat= ttk.Entry(frame_vitales, width=10, textvariable=sat)
+elec_sat.grid(column=7, row=0, padx=4, pady=2)
+
+ttk.Label(frame_vitales, text="Temperatura").grid(column=8, row=0, padx=4, pady=2)
+temp= tk.StringVar()
+elec_temp= ttk.Entry(frame_vitales, width=10, textvariable=temp)
+elec_temp.grid(column=9, row=0, padx=4, pady=2)
+
+ttk.Label(frame_vitales, text="Peso").grid(column=0, row=1, padx=4, pady=2)
+peso= tk.StringVar()
+elec_peso= ttk.Entry(frame_vitales, width=10, textvariable=peso)
+elec_peso.grid(column=1, row=1, padx=4, pady=2)
+
+ttk.Label(frame_vitales, text="Talla").grid(column=2, row=1, padx=4, pady=2)
+talla= tk.StringVar()
+elec_tall= ttk.Entry(frame_vitales, width=10, textvariable=talla)
+elec_tall.grid(column=3, row=1, padx=4, pady=2)
+
+ttk.Label(frame_vitales, text="IMC").grid(column=4, row=1, padx=4, pady=2)
+imc= tk.StringVar()
+elec_imc= ttk.Entry(frame_vitales, width=10, textvariable=imc)
+elec_imc.grid(column=5, row=1, padx=4, pady=2)
+
 
 #frame interrogatorio
 frame_interrogatorio = ttk.LabelFrame(tab1, text="Interrogatorio")
@@ -96,48 +143,15 @@ esc_personalno = ScrolledText(frame_interrogatorio, font=("Arial", 12),width=40,
 esc_personalno.insert("end","Interrogado y negados")
 esc_personalno.grid(column=1, row=2, padx=4, pady=2)
 
-#Frame signos vitales
-frame_vitales = ttk.LabelFrame(tab1, text="Signos Vitales")
-frame_vitales.grid(column=0, row=1, padx=4, pady=2)
+ttk.Label(frame_interrogatorio, text="Padecimiento actual").grid(column=2, row=0, padx=4, pady=2)
+padact=tk.StringVar()
+esc_padact = ScrolledText(frame_interrogatorio, font=("Arial", 12),width=40, height=10)
+esc_padact.grid(column=3, row=0, padx=4, pady=2)
 
-ttk.Label(frame_vitales, text="Frecuencia cardiaca").grid(column=0, row=0, padx=4, pady=2)
-fc= tk.StringVar()
-elec_fc= ttk.Entry(frame_vitales, width=20, textvariable=fc)
-elec_fc.grid(column=1, row=0, padx=4, pady=2)
+ttk.Label(frame_interrogatorio, text="Padecimiento actual").grid(column=2, row=1, padx=4, pady=2)
+expf=tk.StringVar()
+esc_expf = ScrolledText(frame_interrogatorio, font=("Arial", 12),width=40, height=10)
+esc_expf.grid(column=3, row=1, padx=4, pady=2)
 
-ttk.Label(frame_vitales, text="Frecuencia respiratoria").grid(column=2, row=0, padx=4, pady=2)
-fr= tk.StringVar()
-elec_fr= ttk.Entry(frame_vitales, width=20, textvariable=fr)
-elec_fr.grid(column=3, row=0, padx=4, pady=2)
-
-ttk.Label(frame_vitales, text="Tension arterial").grid(column=4, row=0, padx=4, pady=2)
-ta= tk.StringVar()
-elec_ta= ttk.Entry(frame_vitales, width=20, textvariable=ta)
-elec_ta.grid(column=5, row=0, padx=4, pady=2)
-
-ttk.Label(frame_vitales, text="Saturacion O2").grid(column=6, row=0, padx=4, pady=2)
-sat= tk.StringVar()
-elec_sat= ttk.Entry(frame_vitales, width=20, textvariable=sat)
-elec_sat.grid(column=7, row=0, padx=4, pady=2)
-
-ttk.Label(frame_vitales, text="Temperatura").grid(column=8, row=0, padx=4, pady=2)
-temp= tk.StringVar()
-elec_temp= ttk.Entry(frame_vitales, width=20, textvariable=temp)
-elec_temp.grid(column=9, row=0, padx=4, pady=2)
-
-ttk.Label(frame_vitales, text="Peso").grid(column=0, row=1, padx=4, pady=2)
-peso= tk.StringVar()
-elec_peso= ttk.Entry(frame_vitales, width=20, textvariable=peso)
-elec_peso.grid(column=1, row=1, padx=4, pady=2)
-
-ttk.Label(frame_vitales, text="Talla").grid(column=2, row=1, padx=4, pady=2)
-talla= tk.StringVar()
-elec_tall= ttk.Entry(frame_vitales, width=20, textvariable=talla)
-elec_tall.grid(column=3, row=1, padx=4, pady=2)
-
-ttk.Label(frame_vitales, text="IMC").grid(column=4, row=1, padx=4, pady=2)
-imc= tk.StringVar()
-elec_imc= ttk.Entry(frame_vitales, width=20, textvariable=imc)
-elec_imc.grid(column=5, row=1, padx=4, pady=2)
 
 ventana.mainloop()
